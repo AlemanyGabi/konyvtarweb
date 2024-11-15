@@ -15,12 +15,10 @@ class MufalyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ganre_id' => 'required|integer|min:0|exists:ganre,id',
             'ganre' => 'required|string|max:255',
-            
         ]);
 
-        mufaly::create($request->all());
+        mufaly::create($request->ganre);
         return redirect()->back()->with('success', 'Genre Stored.');
     }
 }
