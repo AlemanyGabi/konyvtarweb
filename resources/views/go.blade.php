@@ -27,19 +27,17 @@
 
     <table style="margin: auto">
         <tr>
-            <th>Model</th>
-            <th>Caution money</th>
-            <th>Day price</th>
-            <th>Km price</th>
+            <th>title</th>
+            <th>author</th>
+            <th>release_date</th>
         </tr>
         @foreach ($libraries as $library)
             <tr>
                 <form action="{{route('booking.go')}}" method="get">
                 @csrf
-                <td>{{$$libraries->title}}</td>
-                <td>{{$libraries->author}}</td>
-                <td>{{$libraries->release_date}}</td>
-                <td><button type="submit">submit</button></td>
+                <td>{{$library->title}}</td>
+                <td>{{$library->author}}</td>
+                <td>{{$library->release_date}}</td>
                 </form>
             </tr>
         @endforeach
