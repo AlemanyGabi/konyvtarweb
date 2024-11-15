@@ -26,6 +26,7 @@ Route::post('/new-genre', [ThemeController::class, 'store'])->name('book.store')
 Route::get('/new-book', [LibraryController::class, 'creater'])->name('booker.create');
 Route::post('/new-book', [LibraryController::class, 'storer'])->name('booker.store');
 
-Route::post('/books', [LibraryController::class, 'created'])->name('bookering.store');
+Route::get('/books', [LibraryController::class, 'go'])->name('booking.go');
+Route::get('/books', [LibraryController::class, 'go'])->name('booking.go');
 
 require __DIR__.'/auth.php';

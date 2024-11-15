@@ -13,7 +13,8 @@ class LibraryController extends Controller
     }
     public function go()
     {
-        return view('booker');
+        $libraries = Library::all();
+        return view('go', compact('libraries'));
     }
 
     public function storer(Request $request)
