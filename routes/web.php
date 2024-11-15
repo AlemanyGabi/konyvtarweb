@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\MufalyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/new-genre', [LibraryController::class, 'create'])->name('book.create');
-Route::post('/new-genre', [LibraryController::class, 'store'])->name('book.store');
+Route::get('/new-genre', [MufalyController::class, 'create'])->name('book.create');
+Route::post('/new-genre', [MufalyController::class, 'store'])->name('book.store');
 
 require __DIR__.'/auth.php';
