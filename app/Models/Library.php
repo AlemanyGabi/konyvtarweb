@@ -11,6 +11,6 @@ class Library extends Model
     use HasFactory, SoftDeletes;
     protected $fillable = ['title', 'author', 'ganre_id', 'release_date'];
     public function Foglalasok(){
-        return $this->belongsTo(Foglalasok::class);
+        return $this->belongsTo(Reservation::class);
     }
 }

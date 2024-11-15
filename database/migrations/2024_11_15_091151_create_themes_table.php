@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('libraries', function (Blueprint $table) {
+        Schema::create('themes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('title');
-            $table->string('author');
-            $table->unsignedBigInteger('ganre_id');
-            $table->date('release_date');
-            $table->foreign('ganre_id')->references('id')->on('mufalies')->onDelete('cascade');
+            $table->integer('ganre_id');
+            $table->string('ganre');
             $table->softDeletes();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('libraries');
+        Schema::dropIfExists('themes');
     }
 };

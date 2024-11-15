@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mufalies', function (Blueprint $table) {
+        Schema::create('reservation', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('ganre_id');
-            $table->string('ganre');
+            $table->string('email');
+            $table->integer('book_id');
+            $table->date('borrow_date');
+            $table->date('return_date');
             $table->softDeletes();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mufalies');
+        Schema::dropIfExists('reservations');
     }
 };

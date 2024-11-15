@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('foglalasoks', function (Blueprint $table) {
+        Schema::create('libraries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('email');
-            $table->integer('book_id');
-            $table->date('borrow_date');
-            $table->date('return_date');
+            $table->string('title');
+            $table->string('author');
+            $table->unsignedBigInteger('ganre_id');
+            $table->date('release_date');
             $table->softDeletes();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('foglalasoks');
+        Schema::dropIfExists('libraries');
     }
 };
